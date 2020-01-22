@@ -17,6 +17,11 @@ namespace basic_api_collection.Models
             this.coll = coll;
         } 
 
+        public CollectionBO()
+        {
+            
+        }
+
         public bool Valid() {
             if (string.IsNullOrEmpty(this.coll.getKey())) {
                 return false;
@@ -35,8 +40,7 @@ namespace basic_api_collection.Models
                 return false;
             }
 
-            CollectionPersistence persistence = CollectionPersistence.getInstance(); 
-            IDictionary<string, Dictionary<int, List<string>>> collections = persistence.getCollections();
+            IDictionary<string, Dictionary<int, List<string>>> collections = getCollections();
 
             if (collections.ContainsKey(this.coll.getKey())) {
                 // contains key 
@@ -51,6 +55,8 @@ namespace basic_api_collection.Models
                     } 
 
                     addOrderedSubDictionary(ref subDictionary);
+                    // subDictionary = subDictionary.OrderBy(key => key.Key);
+            
                     return true;
                 }
             }
@@ -59,6 +65,39 @@ namespace basic_api_collection.Models
                 {this.coll.getSubIndex(), new List<string>(){this.coll.getValue()}}
             });
             return true;
+        }
+
+        public IList<string> Get(string key, int start, int end) {
+            IDictionary<string, Dictionary<int, List<string>>> collections = getCollections();
+            IList<string> list = new List<string>();
+
+            if (collections.ContainsKey(key)) {
+                // contains key 
+                Dictionary<int, List<string>> subDictionary; 
+                if (collections.TryGetValue(key, out subDictionary)) {
+                   int count = 0;
+                   if (start < 0) {
+                       start = 0;
+                   }
+                   if (end < 0) {
+                       end =+ subDictionary.Count;
+                   }
+                   foreach (var keyValuePair in subDictionary)
+                   {
+                       if (count >= start && count <= end) {
+                           list = list.Concat(keyValuePair.Value).ToList();
+                       }
+                       count++;
+                   }
+                }
+            }
+
+            return list;
+        }
+
+        private IDictionary<string, Dictionary<int, List<string>>> getCollections() {
+             CollectionPersistence persistence = CollectionPersistence.getInstance(); 
+             return persistence.getCollections();
         }
 
         // getSubIndexIndice returns the subindex of some set, if didn't exists return 0

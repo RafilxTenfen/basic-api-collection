@@ -1,26 +1,30 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using System;
+using basic_api_collection.Controllers;
 
 namespace basic_api_collection
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
-        }
+            Console.WriteLine("Hello World!");
+            var collection = NewCollection();
+            collection.Add("ano.nascimento", 1980, "pedro");
+            collection.Add("ano.nascimento", 1980, "maria");
+            collection.Add("ano.nascimento", 1980, "joao");
+            collection.Add("ano.nascimento", 1975, "rodrigo");
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+            var nascimentos = collection.Get("ano.nascimento", 0, -1);
+            Console.WriteLine("Deveria ter 4 elementos: " + nascimentos.Count);
+            Console.WriteLine("Deveria ser o elemento 'rodrigo':" + nascimentos[0]);
+            Console.WriteLine("Deveria ser o elemento 'joao':" + nascimentos[1]);
+            Console.WriteLine("Deveria ser o elemento 'maria':" + nascimentos[2]);
+            Console.WriteLine("Deveria ser o elemento 'pedro':" + nascimentos[3]);
+        }
+        
+        public static ICollectionsController NewCollection() {
+            return new CollectionsController();
+        }
     }
+
 }

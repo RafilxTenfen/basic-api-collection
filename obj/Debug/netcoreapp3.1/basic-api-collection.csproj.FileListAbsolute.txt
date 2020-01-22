@@ -16,9 +16,6 @@
 /home/rafilx/projects/c#/basic-api-collection/obj/Debug/netcoreapp3.1/staticwebassets/basic-api-collection.StaticWebAssets.xml
 /home/rafilx/projects/c#/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.MvcApplicationPartsAssemblyInfo.cache
 /home/rafilx/projects/c#/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.RazorTargetAssemblyInfo.cache
-/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/appsettings.Development.json
-/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/appsettings.json
-/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/basic-api-collection
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/basic-api-collection.deps.json
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/basic-api-collection.runtimeconfig.json
@@ -26,11 +23,7 @@
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/basic-api-collection.dll
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/bin/Debug/netcoreapp3.1/basic-api-collection.pdb
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.csprojAssemblyReference.cache
-/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/staticwebassets/basic-api-collection.StaticWebAssets.Manifest.cache
-/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/staticwebassets/basic-api-collection.StaticWebAssets.xml
-/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.MvcApplicationPartsAssemblyInfo.cache
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.AssemblyInfoInputs.cache
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.AssemblyInfo.cs
-/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.RazorTargetAssemblyInfo.cache
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.dll
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/Debug/netcoreapp3.1/basic-api-collection.pdb
