@@ -5,9 +5,9 @@ namespace basic_api_collection.Models
     {
         private string key;
         private int subIndex { get; set; }
-        private string[] value;
+        private string value;
 
-        public Collection(string key, int subIndex, string[] value)
+        public Collection(string key, int subIndex, string value)
         {
             this.key = key;
             this.subIndex = subIndex;
@@ -29,11 +29,11 @@ namespace basic_api_collection.Models
             this.subIndex = subIndex;
         }
 
-        public string[] getValue() {
+        public string getValue() {
             return this.value;
         }
 
-        public void setValue(string[] value) {
+        public void setValue(string value) {
             this.value = value;
         }
     }

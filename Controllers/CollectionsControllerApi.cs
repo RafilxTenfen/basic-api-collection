@@ -8,11 +8,13 @@ using Microsoft.Extensions.Logging;
 
 namespace basic_api_collection.Controllers
 {
-    public class CollectionsController : ControllerBase
+    [ApiController]
+    [Route("[controller]")]
+    public class CollectionsControllerApi : ControllerBase
     {   
-        private readonly ILogger<CollectionsController> _logger;
+        private readonly ILogger<CollectionsControllerApi> _logger;
         private static List<Collection> collections = new List<Collection>();
-        public CollectionsController(ILogger<CollectionsController> logger)
+        public CollectionsControllerApi(ILogger<CollectionsControllerApi> logger)
         {
             _logger = logger;
         }
@@ -23,9 +25,10 @@ namespace basic_api_collection.Controllers
             return collections;
         }
 
-        public void Post([FromBody]string key, int subIndex, string[]set)
+        public void Post(string key, int subIndex, string value)
         {       
-            Collection coll = new Collection(key, subIndex, set);
+            // string[] values = new string[]{value};
+            Collection coll = new Collection(key, subIndex, value);
 
             collections.Add(coll);
         }

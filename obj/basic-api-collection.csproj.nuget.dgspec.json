@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/rafilx/projects/c#/basic-api-collection/basic-api-collection.csproj": {}
+    "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/basic-api-collection.csproj": {}
   },
   "projects": {
-    "/home/rafilx/projects/c#/basic-api-collection/basic-api-collection.csproj": {
+    "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/basic-api-collection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rafilx/projects/c#/basic-api-collection/basic-api-collection.csproj",
+        "projectUniqueName": "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/basic-api-collection.csproj",
         "projectName": "basic-api-collection",
-        "projectPath": "/home/rafilx/projects/c#/basic-api-collection/basic-api-collection.csproj",
+        "projectPath": "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/basic-api-collection.csproj",
         "packagesPath": "/home/rafilx/.nuget/packages/",
-        "outputPath": "/home/rafilx/projects/c#/basic-api-collection/obj/",
+        "outputPath": "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rafilx/.nuget/NuGet/NuGet.Config"
