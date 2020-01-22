@@ -11,7 +11,7 @@ namespace basic_api_collection.Persistence
     {   
         // private IList<Collection> collections; 
         
-        public IDictionary<string, Dictionary<int, List<string>>> collections;
+        public IDictionary<string, SortedDictionary<int, List<string>>> collections;
         //sortList<string> copy = new List<string>(array); copy.Sort();
 
         // Instance for singleton
@@ -22,7 +22,7 @@ namespace basic_api_collection.Persistence
         {
             // this.collections = new List<Collection>();
             // Dictionary subDictionary = new Dictionary<int, string[]>();
-            this.collections = new Dictionary<string, Dictionary<int, List<string>>>();
+            this.collections = new Dictionary<string, SortedDictionary<int, List<string>>>();
         }
 
         public static CollectionPersistence getInstance() 
@@ -34,7 +34,7 @@ namespace basic_api_collection.Persistence
             return Instance;
         }
 
-        public IDictionary<string, Dictionary<int, List<string>>> getCollections() {
+        public IDictionary<string, SortedDictionary<int, List<string>>> getCollections() {
             return this.collections;
         }
     }

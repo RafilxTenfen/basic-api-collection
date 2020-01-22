@@ -40,11 +40,11 @@ namespace basic_api_collection.Models
                 return false;
             }
 
-            IDictionary<string, Dictionary<int, List<string>>> collections = getCollections();
+            IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
 
             if (collections.ContainsKey(this.coll.getKey())) {
                 // contains key 
-                Dictionary<int, List<string>> subDictionary; 
+                SortedDictionary<int, List<string>> subDictionary; 
                 if (collections.TryGetValue(this.coll.getKey(), out subDictionary)) {
 
                     int subIndex = getSubIndexIndice(subDictionary, this.coll.getValue());
@@ -61,19 +61,19 @@ namespace basic_api_collection.Models
                 }
             }
 
-            collections.Add(this.coll.getKey(), new Dictionary<int, List<string>>(){
+            collections.Add(this.coll.getKey(), new SortedDictionary<int, List<string>>(){
                 {this.coll.getSubIndex(), new List<string>(){this.coll.getValue()}}
             });
             return true;
         }
 
         public IList<string> Get(string key, int start, int end) {
-            IDictionary<string, Dictionary<int, List<string>>> collections = getCollections();
+            IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
             IList<string> list = new List<string>();
 
             if (collections.ContainsKey(key)) {
                 // contains key 
-                Dictionary<int, List<string>> subDictionary; 
+                SortedDictionary<int, List<string>> subDictionary; 
                 if (collections.TryGetValue(key, out subDictionary)) {
                    int count = 0;
                    if (start < 0) {
@@ -95,13 +95,13 @@ namespace basic_api_collection.Models
             return list;
         }
 
-        private IDictionary<string, Dictionary<int, List<string>>> getCollections() {
+        private IDictionary<string, SortedDictionary<int, List<string>>> getCollections() {
              CollectionPersistence persistence = CollectionPersistence.getInstance(); 
              return persistence.getCollections();
         }
 
         // getSubIndexIndice returns the subindex of some set, if didn't exists return 0
-        private int getSubIndexIndice(Dictionary<int, List<string>> subDictionary, string set) {
+        private int getSubIndexIndice(SortedDictionary<int, List<string>> subDictionary, string set) {
             foreach (var keyValuePair in subDictionary)
             {
                 if (keyValuePair.Value.BinarySearch(set) >= 0) {
@@ -111,7 +111,7 @@ namespace basic_api_collection.Models
             return 0;
         }
 
-        private void addOrderedSubDictionary(ref Dictionary<int, List<string>> subDictionary) {
+        private void addOrderedSubDictionary(ref SortedDictionary<int, List<string>> subDictionary) {
             if (subDictionary.ContainsKey(this.coll.getSubIndex())) {
                 List<string> values;
                 if (subDictionary.TryGetValue(this.coll.getSubIndex(), out values)) {
@@ -123,7 +123,7 @@ namespace basic_api_collection.Models
             subDictionary.Add(this.coll.getSubIndex(), new List<string>{this.coll.getValue()});
         }
 
-        private bool removeAtSubIndex(int subIndex, ref Dictionary<int, List<string>> subDictionary) {
+        private bool removeAtSubIndex(int subIndex, ref SortedDictionary<int, List<string>> subDictionary) {
             if (subDictionary.ContainsKey(subIndex)) {
                 List<string> values;
                 if (subDictionary.TryGetValue(subIndex, out values)) {
@@ -133,7 +133,7 @@ namespace basic_api_collection.Models
             return false;
         }
 
-        private int indexOf(Dictionary<int, string[]> subDictionary, string[] value) {
+        private int indexOf(SortedDictionary<int, string[]> subDictionary, string[] value) {
             foreach (var keyValuePair in subDictionary) {
                 if (keyValuePair.Value.Equals(value)) {
                     return keyValuePair.Key;
