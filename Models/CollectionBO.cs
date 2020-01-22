@@ -104,7 +104,19 @@ namespace basic_api_collection.Models
             IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
             return collections.Remove(key);
         }
-        
+
+        public  bool RemoveValuesFromSubIndex(string key, int subIndex) {
+            IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
+            if (collections.ContainsKey(key)) {
+                // contains key 
+                SortedDictionary<int, List<string>> subDictionary; 
+                if (collections.TryGetValue(key, out subDictionary)) {
+                    return subDictionary.Remove(subIndex);
+                }
+            }
+            return false;
+        }
+
         private IDictionary<string, SortedDictionary<int, List<string>>> getCollections() {
              CollectionPersistence persistence = CollectionPersistence.getInstance(); 
              return persistence.getCollections();
