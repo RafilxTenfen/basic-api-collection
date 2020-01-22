@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "/home/rafilx/.dotnet/store/|arch|/|tfm|",
-      "/home/rafilx/.nuget/packages"
-    ]
-  }
-}
