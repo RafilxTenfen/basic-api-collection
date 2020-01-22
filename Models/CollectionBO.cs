@@ -26,7 +26,7 @@ namespace basic_api_collection.Models
             if (string.IsNullOrEmpty(this.coll.getKey())) {
                 return false;
             }
-            if (this.coll.getSubIndex() <= 0) {
+            if (this.coll.getSubIndex() < 0) {
                 return false;
             } 
             if (this.coll.getValue().Length <= 0) {
@@ -75,19 +75,24 @@ namespace basic_api_collection.Models
                 // contains key 
                 SortedDictionary<int, List<string>> subDictionary; 
                 if (collections.TryGetValue(key, out subDictionary)) {
+                   
                    int count = 0;
                    if (start < 0) {
                        start = 0;
                    }
+
+                   var valuesSub = countValues(subDictionary);
                    if (end < 0) {
-                       end =+ subDictionary.Count;
+                       end = end + valuesSub;
                    }
-                   foreach (var keyValuePair in subDictionary)
-                   {
-                       if (count >= start && count <= end) {
-                           list = list.Concat(keyValuePair.Value).ToList();
+
+                   foreach (var keyValuePair in subDictionary) {    
+                       foreach (var value in keyValuePair.Value) {
+                           if (count >= start && count <= end) {
+                                list.Add(value);
+                            }
+                            count++;
                        }
-                       count++;
                    }
                 }
             }
@@ -95,9 +100,22 @@ namespace basic_api_collection.Models
             return list;
         }
 
+        public  bool Remove(string key) {
+            IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
+            return collections.Remove(key);
+        }
+        
         private IDictionary<string, SortedDictionary<int, List<string>>> getCollections() {
              CollectionPersistence persistence = CollectionPersistence.getInstance(); 
              return persistence.getCollections();
+        }
+
+        private int countValues(SortedDictionary<int, List<string>> subDictionary) {
+            int count = 0;
+            foreach (var keyValuePair in subDictionary) {    
+                count += keyValuePair.Value.Count;       
+            }
+            return count;
         }
 
         // getSubIndexIndice returns the subindex of some set, if didn't exists return 0

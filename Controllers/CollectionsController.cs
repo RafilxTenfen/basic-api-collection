@@ -22,7 +22,8 @@ namespace basic_api_collection.Controllers
         }
 
         public  bool Remove(string key) {
-            return true;
+            this.Bo = new CollectionBO();
+            return this.Bo.Remove(key);
         }
 
         public bool RemoveValuesFromSubIndex(string key, int subIndex) {
