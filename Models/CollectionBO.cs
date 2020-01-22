@@ -7,20 +7,14 @@ using System.Collections;
 // Bussines Object for Collection
 namespace basic_api_collection.Models
 {
-    public class CollectionBO 
-    {
+    public class CollectionBO {
         private Collection coll;
 
-        // Dependency Injection
-        public CollectionBO(Collection coll)
-        {
+        public CollectionBO(Collection coll) {
             this.coll = coll;
         } 
 
-        public CollectionBO()
-        {
-            
-        }
+        public CollectionBO() {}
 
         public bool Valid() {
             if (string.IsNullOrEmpty(this.coll.getKey())) {
@@ -43,7 +37,6 @@ namespace basic_api_collection.Models
             IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
 
             if (collections.ContainsKey(this.coll.getKey())) {
-                // contains key 
                 SortedDictionary<int, List<string>> subDictionary; 
                 if (collections.TryGetValue(this.coll.getKey(), out subDictionary)) {
 
@@ -55,8 +48,6 @@ namespace basic_api_collection.Models
                     } 
 
                     addOrderedSubDictionary(ref subDictionary);
-                    // subDictionary = subDictionary.OrderBy(key => key.Key);
-            
                     return true;
                 }
             }
@@ -72,49 +63,66 @@ namespace basic_api_collection.Models
             IList<string> list = new List<string>();
 
             if (collections.ContainsKey(key)) {
-                // contains key 
                 SortedDictionary<int, List<string>> subDictionary; 
                 if (collections.TryGetValue(key, out subDictionary)) {
                    
-                   int count = 0;
-                   if (start < 0) {
-                       start = 0;
-                   }
+                    int count = 0;
+                    if (start < 0) {
+                        start = 0;
+                    }
 
-                   var valuesSub = countValues(subDictionary);
-                   if (end < 0) {
-                       end = end + valuesSub;
-                   }
+                    var valuesSub = countValues(subDictionary);
+                    if (end < 0) {
+                        end = end + valuesSub;
+                    }
 
-                   foreach (var keyValuePair in subDictionary) {    
-                       foreach (var value in keyValuePair.Value) {
-                           if (count >= start && count <= end) {
-                                list.Add(value);
-                            }
+                    foreach (var keyValuePair in subDictionary) {    
+                        foreach (var value in keyValuePair.Value) {
+                            if (count >= start && count <= end) {
+                                    list.Add(value);
+                                }
                             count++;
-                       }
-                   }
+                        }
+                    }
                 }
             }
 
             return list;
         }
 
-        public  bool Remove(string key) {
+        public bool Remove(string key) {
             IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
             return collections.Remove(key);
         }
 
-        public  bool RemoveValuesFromSubIndex(string key, int subIndex) {
+        public bool RemoveValuesFromSubIndex(string key, int subIndex) {
             IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
             if (collections.ContainsKey(key)) {
-                // contains key 
                 SortedDictionary<int, List<string>> subDictionary; 
                 if (collections.TryGetValue(key, out subDictionary)) {
                     return subDictionary.Remove(subIndex);
                 }
             }
             return false;
+        }
+
+        public long IndexOf(string key, string value) {
+            int count = 0;
+            IDictionary<string, SortedDictionary<int, List<string>>> collections = getCollections();
+            if (collections.ContainsKey(key)) {
+                SortedDictionary<int, List<string>> subDictionary; 
+                if (collections.TryGetValue(key, out subDictionary)) {
+                    foreach (var keyValuePair in subDictionary) {    
+                        foreach (var set in keyValuePair.Value) {
+                            if (set.Equals(value)) {
+                                return count;
+                            }
+                            count++;
+                        }
+                    }
+                }
+            }
+            return count;
         }
 
         private IDictionary<string, SortedDictionary<int, List<string>>> getCollections() {
