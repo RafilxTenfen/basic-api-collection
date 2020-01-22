@@ -1,8 +1,6 @@
 using System; 
-using System.Linq; 
 using basic_api_collection.Persistence;
 using System.Collections.Generic;
-using System.Collections; 
 
 // Bussines Object for Collection
 namespace basic_api_collection.Models
@@ -23,7 +21,7 @@ namespace basic_api_collection.Models
             if (this.coll.getSubIndex() < 0) {
                 return false;
             } 
-            if (this.coll.getValue().Length <= 0) {
+            if (string.IsNullOrEmpty(this.coll.getValue())) {
                 return false;
             }
             return true;
