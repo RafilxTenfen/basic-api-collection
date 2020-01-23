@@ -38,3 +38,14 @@
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.AssemblyInfo.cs
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.dll
 /home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.pdb
+/home/rafilx/projects/c#/basic-api-collection/Collection/bin/Debug/netcoreapp3.1/basic-api-collection
+/home/rafilx/projects/c#/basic-api-collection/Collection/bin/Debug/netcoreapp3.1/basic-api-collection.deps.json
+/home/rafilx/projects/c#/basic-api-collection/Collection/bin/Debug/netcoreapp3.1/basic-api-collection.runtimeconfig.json
+/home/rafilx/projects/c#/basic-api-collection/Collection/bin/Debug/netcoreapp3.1/basic-api-collection.runtimeconfig.dev.json
+/home/rafilx/projects/c#/basic-api-collection/Collection/bin/Debug/netcoreapp3.1/basic-api-collection.dll
+/home/rafilx/projects/c#/basic-api-collection/Collection/bin/Debug/netcoreapp3.1/basic-api-collection.pdb
+/home/rafilx/projects/c#/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.csprojAssemblyReference.cache
+/home/rafilx/projects/c#/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.AssemblyInfoInputs.cache
+/home/rafilx/projects/c#/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.AssemblyInfo.cs
+/home/rafilx/projects/c#/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.dll
+/home/rafilx/projects/c#/basic-api-collection/Collection/obj/Debug/netcoreapp3.1/basic-api-collection.pdb

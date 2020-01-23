@@ -6601,11 +6601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection.Tests/Collection.Tests.csproj",
+      "projectUniqueName": "/home/rafilx/projects/c#/basic-api-collection/Collection.Tests/Collection.Tests.csproj",
       "projectName": "Collection.Tests",
-      "projectPath": "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection.Tests/Collection.Tests.csproj",
+      "projectPath": "/home/rafilx/projects/c#/basic-api-collection/Collection.Tests/Collection.Tests.csproj",
       "packagesPath": "/home/rafilx/.nuget/packages/",
-      "outputPath": "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection.Tests/obj/",
+      "outputPath": "/home/rafilx/projects/c#/basic-api-collection/Collection.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/rafilx/.nuget/NuGet/NuGet.Config"
@@ -6619,8 +6619,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection/basic-api-collection.csproj": {
-              "projectPath": "/home/rafilx/projects/c#/RafilxTenfen/basic-api-collection/Collection/basic-api-collection.csproj"
+            "/home/rafilx/projects/c#/basic-api-collection/Collection/basic-api-collection.csproj": {
+              "projectPath": "/home/rafilx/projects/c#/basic-api-collection/Collection/basic-api-collection.csproj"
             }
           }
         }

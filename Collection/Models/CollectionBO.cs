@@ -3,8 +3,7 @@ using basic_api_collection.Persistence;
 using System.Collections.Generic;
 
 // Bussines Object for Collection
-namespace basic_api_collection.Models
-{
+namespace basic_api_collection.Models {
     public class CollectionBO {
         private Collection coll;
 
@@ -120,7 +119,7 @@ namespace basic_api_collection.Models
                     }
                 }
             }
-            return count;
+            return 0;
         }
 
         private IDictionary<string, SortedDictionary<int, List<string>>> getCollections() {
