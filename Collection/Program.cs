@@ -1,12 +1,9 @@
 ﻿using System;
 using basic_api_collection.Controllers;
 
-namespace basic_api_collection
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace basic_api_collection {
+    class Program {
+        static void Main(string[] args) {
             Console.WriteLine("Hello World!");
             var collection = NewCollection();
             collection.Add("ano.nascimento", 1980, "pedro");

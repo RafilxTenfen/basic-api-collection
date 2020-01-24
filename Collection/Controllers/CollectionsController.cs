@@ -1,14 +1,11 @@
 using System.Collections.Generic;
 using basic_api_collection.Models;
 
-namespace basic_api_collection.Controllers
-{
-    public class CollectionsController : ICollectionsController
-    {       
+namespace basic_api_collection.Controllers {
+    public class CollectionsController : ICollectionsController {       
         private CollectionBO Bo;
 
-        public CollectionsController()
-        {
+        public CollectionsController() {
             this.Bo = new CollectionBO();
         }
         

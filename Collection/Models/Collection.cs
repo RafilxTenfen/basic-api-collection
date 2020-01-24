@@ -1,14 +1,11 @@
 
-namespace basic_api_collection.Models
-{
-    public class Collection
-    {
+namespace basic_api_collection.Models {
+    public class Collection {
         private string key;
-        private int subIndex { get; set; }
+        private int subIndex;
         private string value;
 
-        public Collection(string key, int subIndex, string value)
-        {
+        public Collection(string key, int subIndex, string value) {
             this.key = key;
             this.subIndex = subIndex;
             this.value = value;

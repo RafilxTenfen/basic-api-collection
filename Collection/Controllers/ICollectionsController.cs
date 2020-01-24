@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 
-namespace basic_api_collection.Controllers
-{
+namespace basic_api_collection.Controllers {
     /// summary
     /// O proposito desta interface é definir uma API para abstrair os detalhes técnicos de uma
     /// colecao de alta performance para adicionar, remover e procurar um elemento,
@@ -19,8 +18,7 @@ namespace basic_api_collection.Controllers
     /// Tabela 1
     ///
     /// summary
-    public interface ICollectionsController
-    {
+    public interface ICollectionsController {
         /// summary
         /// Adiciona um elemento na respectiva coleção representada pela chave e seu
         /// subIndice.
